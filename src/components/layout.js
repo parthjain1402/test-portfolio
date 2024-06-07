@@ -4,6 +4,7 @@ import * as icons from 'react-icons/ri';
 import * as md_icons from "react-icons/md";
 import { Link } from 'gatsby';
 import Sidebar from '../components/sidebar';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Layout = ({ pageTitle, children }) => {
   const [darkMode, setDarkMode] = useState(false);
@@ -56,10 +57,13 @@ const Layout = ({ pageTitle, children }) => {
             {/* Home button and name */}
             <Link to="/" className="flex flex-row font-bold">
               <button type="button" className="py-2 text-center" aria-label='go to home page'>
-                <icons.RiHome3Fill className="text-slate-800 dark:text-white hover:scale-150 duration-300" size={18} />
+              <StaticImage
+              src="../images/icon.png"
+              className="rounded-full h-6 w-6 object-cover hover:scale-150 duration-300"
+              />
               </button>
               <div className="font-bold hover:underline p-2 text-center">
-                Author
+                Purtee Kohli
               </div>
             </Link>
             {/* Big screens: links and dark mode button*/}
@@ -67,8 +71,11 @@ const Layout = ({ pageTitle, children }) => {
               <nav className="flex justify-end items-center">
                 <ul className="flex flex-row justify-end items-center list-none space-x-4 font-bold">
                   <li><Link to="/" className='hover:underline'>About</Link></li>
-                  <li><Link to="/projects" className='hover:underline'>Projects</Link></li>
-                  <li><Link to="/blog" className='hover:underline'>Blog</Link></li>
+                  <li><Link to="#education" className='hover:underline'>Education</Link></li>
+                  <li><Link to="#projects" className='hover:underline'>Projects</Link></li>
+                  <li><Link to="#publications" className='hover:underline'>Publications</Link></li>
+                  <li><Link to="#conference" className='hover:underline'>Conferences</Link></li>
+                  <li><Link to="#contact" className='hover:underline'>Contact</Link></li>
                   <li><Link href="https://drive.google.com/" target='_blank' rel="noreferrer" className='hover:underline'>CV</Link></li>
                   <div className="cursor-pointer inset-x-0 inset-y-0" onClick={handleToggleDarkMode}>
                     {darkMode ? <icons.RiSunFill className="text-slate-800 dark:text-white hover:scale-150 duration-300" size={18}/> : <icons.RiMoonFill className="text-slate-800 dark:text-white hover:scale-150 duration-300" size={18} />}
@@ -85,8 +92,11 @@ const Layout = ({ pageTitle, children }) => {
                     <md_icons.MdArrowForwardIos className="cursor-pointer text-white dark:text-slate-500 hover:scale-150 duration-300" size={18} onClick={()=>setIsOpen(false)}/>
                   </div>
                   <Link to="/" className={`flex w-full justify-center text-center px-4 py-2 text-white dark:text-slate-500 hover:bg-slate-700 dark:hover:bg-slate-200 hover:underline`} onClick={()=>setIsOpen(false)}> About </Link>
-                  <Link to="/projects" className={`flex w-full justify-center text-center px-4 py-2 text-white dark:text-slate-500 hover:bg-slate-700 dark:hover:bg-slate-200 hover:underline`} onClick={()=>setIsOpen(false)}> Projects </Link>
-                  <Link to="/blog" className={`flex w-full justify-center text-center px-4 py-2 text-white dark:text-slate-500 hover:bg-slate-700 dark:hover:bg-slate-200 hover:underline`} onClick={()=>setIsOpen(false)}> Blog </Link>
+                  <Link to="#education" className={`flex w-full justify-center text-center px-4 py-2 text-white dark:text-slate-500 hover:bg-slate-700 dark:hover:bg-slate-200 hover:underline`} onClick={()=>setIsOpen(false)}> Education </Link>
+                  <Link to="#projects" className={`flex w-full justify-center text-center px-4 py-2 text-white dark:text-slate-500 hover:bg-slate-700 dark:hover:bg-slate-200 hover:underline`} onClick={()=>setIsOpen(false)}> Projects </Link>
+                  <Link to="#publications" className={`flex w-full justify-center text-center px-4 py-2 text-white dark:text-slate-500 hover:bg-slate-700 dark:hover:bg-slate-200 hover:underline`} onClick={()=>setIsOpen(false)}> Publications </Link>
+                  <Link to="#conference" className={`flex w-full justify-center text-center px-4 py-2 text-white dark:text-slate-500 hover:bg-slate-700 dark:hover:bg-slate-200 hover:underline`} onClick={()=>setIsOpen(false)}> Conferences </Link>
+                  <Link to="#contact" className={`flex w-full justify-center text-center px-4 py-2 text-white dark:text-slate-500 hover:bg-slate-700 dark:hover:bg-slate-200 hover:underline`} onClick={()=>setIsOpen(false)}> Contact </Link>
                   <Link href="https://drive.google.com/" target='_blank' className={`flex w-full justify-center text-center px-4 py-2 text-white dark:text-slate-500 hover:bg-slate-700 dark:hover:bg-slate-200 hover:underline`} onClick={()=>setIsOpen(false)}> CV </Link>
                   <div className="flex justify-center text-center inset-x-0 inset-y-0 px-4 py-2" onClick={handleToggleDarkMode}>
                     {darkMode ? <icons.RiSunFill className="cursor-pointer text-white dark:text-slate-800 hover:scale-150 duration-300" size={18}/> : <icons.RiMoonFill className="cursor-pointer text-white dark:text-slate-800 hover:scale-150 duration-300" size={18} />}
@@ -116,7 +126,7 @@ const Layout = ({ pageTitle, children }) => {
 
         <footer className="container mx-auto text-center text-sm pb-2">
         <p class="cp-text">
-          © {new Date().getFullYear()} <span className="font-bold">Designed by Author. Inspired by <Link href='https://www.github.com/ibrahim-didi/elegant-portfolio'>elegant-portfolio</Link>.</span>
+          © {new Date().getFullYear()} <span className="font-bold">Designed by Parth Jain. Inspired by <Link href='https://www.github.com/ibrahim-didi/elegant-portfolio'>elegant-portfolio</Link>.</span>
         </p>
         </footer>
       </main>
