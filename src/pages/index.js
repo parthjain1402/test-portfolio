@@ -127,15 +127,10 @@ const IndexPage = () => {
             <PublicationEntry
               name={''}
               title={'IOSR Journal of Computer Engineering'}
-              authors={'Author 1, Author 2'}
-              journal={'Journal 2'}
+              authors={' '}
+              journal={' '}
             />
-            <PublicationEntry
-              date={'2022'}
-              title={'Publication 1'}
-              authors={'Author 1, Author 2, Author 3'}
-              journal={'Journal 1'}
-            />
+            
           </section>
 
           <section>
